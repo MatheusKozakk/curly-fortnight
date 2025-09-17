@@ -28,7 +28,7 @@ jobs:
             -
                 name: Set up Docker Buildx
                 uses: docker/setup-buildx-action@v3
-                
+
     discord:
         runs-on: ubuntu-latest
         steps:
@@ -36,6 +36,8 @@ jobs:
                 uses: actions/checkout@v4
             -
                 name: Run Discord Webhook
-                uses: johnyhuy/actions-discord-git-webhook@main
+                uses: Sniddl/discord-commits@v1.6
                 with:
-                    webhook_url: ${{ secrets.DISCORD_WEBOOK }}
+                    webhook: ${{ secrets.DISCORD_WEBOOK }}
+                    template: "avatar-with-link"
+                    include-extras: true
