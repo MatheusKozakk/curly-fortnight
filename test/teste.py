@@ -15,7 +15,7 @@ async def test_root():
 async def test_funcaoteste():
     with patch('random.randint', return_value=12345):
         result = await funcaoteste()
-    assert result() == {"teste": True, "num_aleatorio": 12345}
+    assert result == {"teste": True, "num_aleatorio": 12345}
 
 
 @pytest.mark.asyncio
